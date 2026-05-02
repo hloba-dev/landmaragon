@@ -198,9 +198,14 @@ export default function RegisterForm() {
         <div className="form-wrap">
           <form onSubmit={handleSubmit} noValidate>
             <h3 className="form-title">Зареєструватися на інтенсив</h3>
-            <p className="form-sub">
-              Безкоштовно. 3 дні практики. Старт — 10 травня.
-            </p>
+            <ul className="form-highlights" aria-label="Умови інтенсиву">
+              <li className="form-highlight form-highlight--accent">
+                <span className="form-highlight__dot" aria-hidden="true" />
+                Безкоштовно
+              </li>
+              <li className="form-highlight">3 дні практики</li>
+              <li className="form-highlight">Старт — 10 травня</li>
+            </ul>
 
             <div className="form-field">
               <label className="form-label" htmlFor="f-name">

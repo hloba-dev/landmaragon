@@ -7,7 +7,7 @@ export default function TopBar() {
         <Brand />
 
         <ul className="topbar__plate" aria-label="Параметри інтенсиву">
-          <li>Безоплатний інтенсив</li>
+          <li>Безкоштовний інтенсив</li>
           <li>3 дні</li>
           <li>Старт: 10 травня</li>
         </ul>
