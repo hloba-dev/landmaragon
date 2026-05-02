@@ -6,7 +6,7 @@ export default function Bonus() {
           <span className="section-eyebrow">Бонус</span>
           <h2 className="bonus__title">Отримай шанс виграти сервер з N8N!</h2>
           <p className="bonus__sub">
-            Розіграш повного курсу <b className="text-accent">AI Automator</b>{" "}
+            Розіграш сервера з N8N <b className="text-accent">безкоштовно на 2 місяці</b>{" "}
             від HlobaFlow серед тих, хто:
           </p>
 

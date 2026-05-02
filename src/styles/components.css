@@ -104,7 +104,7 @@
 
 .hero__inner {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.5fr 0.85fr;
   gap: clamp(24px, 4vw, 56px);
   align-items: center;
   position: relative;
@@ -130,21 +130,24 @@
 }
 
 .hero__title {
-  font-size: var(--fs-h1);
+  /* Окремий clamp для Hero — підібрано так, щоб слово "AI-АВТОМАТИЗАТОР"
+     гарантовано вміщалось у ліву колонку grid на всіх типових ширинах:
+     - min 26px (320px viewport)
+     - 5vw — плавна шкала
+     - max 72px (на ≥1440 = 72px, влазить у ліву колонку 1.5fr) */
+  font-size: clamp(26px, 5vw, 72px);
   margin-bottom: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   background: linear-gradient(180deg, #fff 0%, #d8d8d8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   white-space: nowrap;
-  /* AI-автоматизатор має лишатись у одну лінію — fs-h1 на 320px = 34px,
-     16 символів Bebas Neue ~ 200px, що влазить у 288px (320 - 2*16 padding). */
 }
 
-@media (max-width: 360px) {
+@media (min-width: 768px) {
   .hero__title {
-    font-size: 30px;
+    letter-spacing: 1px;
   }
 }
 
