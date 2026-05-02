@@ -1376,3 +1376,124 @@
   color: var(--text-3);
 }
 
+/* ---------- Register section spotlight ---------- */
+#register {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#register::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 107, 0, 0.22), transparent 65%),
+    radial-gradient(ellipse 55% 45% at 50% 100%, rgba(255, 107, 0, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+#register::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 140, 51, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 140, 51, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, #000 25%, transparent 80%);
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, #000 25%, transparent 80%);
+  pointer-events: none;
+}
+
+#register .form-wrap {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 107, 0, 0.07), transparent 38%),
+    var(--bg-card);
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 0, 0.18),
+    0 30px 80px -24px rgba(255, 107, 0, 0.32),
+    0 12px 40px -12px rgba(0, 0, 0, 0.65);
+  animation: register-glow 4.5s ease-in-out infinite;
+}
+
+#register .form-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 51, 0.75) 0%,
+    rgba(255, 107, 0, 0.25) 35%,
+    rgba(255, 107, 0, 0) 65%,
+    rgba(255, 140, 51, 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#register .form-wrap > * {
+  position: relative;
+  z-index: 2;
+}
+
+#register .form-title {
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-hi) 70%, var(--accent) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+
+@keyframes register-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 107, 0, 0.18),
+      0 30px 80px -24px rgba(255, 107, 0, 0.32),
+      0 12px 40px -12px rgba(0, 0, 0, 0.65);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 140, 51, 0.28),
+      0 36px 90px -22px rgba(255, 107, 0, 0.45),
+      0 12px 40px -12px rgba(0, 0, 0, 0.65);
+  }
+}
+
+@keyframes register-rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  #register .form-wrap {
+    animation:
+      register-rise linear both,
+      register-glow 4.5s ease-in-out infinite;
+    animation-timeline: view(), auto;
+    animation-range: entry 0% entry 70%, auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #register .form-wrap {
+    animation: none;
+  }
+}
+
