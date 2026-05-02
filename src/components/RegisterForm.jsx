@@ -199,7 +199,7 @@ export default function RegisterForm() {
           <form onSubmit={handleSubmit} noValidate>
             <h3 className="form-title">Зареєструватися на інтенсив</h3>
             <p className="form-sub">
-              Безоплатно. 3 дні практики. Старт — 10 травня.
+              Безкоштовно. 3 дні практики. Старт — 10 травня.
             </p>
 
             <div className="form-field">

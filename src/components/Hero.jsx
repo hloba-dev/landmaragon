@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__content">
           <div className="hero__badges">
-            <span className="tag">Безоплатно</span>
+            <span className="tag">Безкоштовно</span>
             <span className="tag tag--ghost">3 дні практики</span>
           </div>
 

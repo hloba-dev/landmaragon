@@ -6,7 +6,7 @@ export default function FinalCTA() {
           <h2 className="final__title">
             Спробуй професію{" "}
             <span className="no-wrap-word">AI-автоматизатора</span>{" "}
-            <span className="text-accent">безоплатно</span>
+            <span className="text-accent">безкоштовно</span>
           </h2>
           <p className="final__sub">
             3 дні практики. Реальний AI-асистент у портфоліо. Шанс виграти повний
