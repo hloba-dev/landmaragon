@@ -204,7 +204,7 @@ export default function RegisterForm() {
                 Безкоштовно
               </li>
               <li className="form-highlight">3 дні практики</li>
-              <li className="form-highlight">Старт — 10 травня</li>
+              <li className="form-highlight">Старт — 25 травня</li>
             </ul>
 
             <div className="form-field">

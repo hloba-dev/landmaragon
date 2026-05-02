@@ -17,7 +17,7 @@ import { useSmoothAnchorScroll } from "./hooks/useSmoothAnchorScroll.js";
 // Дата старту інтенсиву — 10 травня поточного року
 const START_DATE = (() => {
   const d = new Date();
-  d.setMonth(4, 10);
+  d.setMonth(4, 25);
   d.setHours(19, 0, 0, 0);
   if (d.getTime() < Date.now()) d.setFullYear(d.getFullYear() + 1);
   return d;
