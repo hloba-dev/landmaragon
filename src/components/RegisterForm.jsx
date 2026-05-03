@@ -1,7 +1,16 @@
 import { useState } from "react";
+import { useCountdown } from "../hooks/useCountdown.js";
 
 const TELEGRAM_BOT_URL = "https://t.me/HlobaFlowSchoolBot";
 const WEBHOOK_URL = import.meta.env.VITE_REGISTER_WEBHOOK_URL || "";
+
+const START_DATE = (() => {
+  const d = new Date();
+  d.setMonth(4, 25);
+  d.setHours(19, 0, 0, 0);
+  if (d.getTime() < Date.now()) d.setFullYear(d.getFullYear() + 1);
+  return d;
+})();
 
 const COUNTRY_CODES = [
   { code: "+380", name: "🇺🇦 UA" },
@@ -191,11 +200,59 @@ export default function RegisterForm() {
   };
 
   const submitting = status === "submitting";
+  const time = useCountdown(START_DATE);
 
   return (
-    <section className="section" id="register">
-      <div className="container">
-        <div className="form-wrap">
+    <section className="section register-section" id="register">
+      <div className="container register-section__container">
+        <div className="register-section__intro">
+          <h2 className="register-section__title">
+            Спробуй професію <br />
+            <span className="register-section__title-accent">
+              AI-автоматизатора
+            </span>{" "}
+            <br />
+            безкоштовно!
+          </h2>
+          <p className="register-section__subtitle">
+            Реєструйся на інтенсив!
+          </p>
+
+          <div className="register-section__visual" aria-hidden="true">
+            <div className="register-section__visual-glow" />
+            <img
+              src="/images/hero-ai.png"
+              alt=""
+              className="register-section__visual-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div className="register-section__form-col">
+          <div
+            className="register-section__countdown"
+            id="register-timer"
+          >
+            <span className="register-section__countdown-label">
+              До старту залишилось:
+            </span>
+            <div
+              className="register-section__countdown-time"
+              aria-live="polite"
+            >
+              <span>{time.days}</span>
+              <span className="register-section__countdown-sep">:</span>
+              <span>{time.hours}</span>
+              <span className="register-section__countdown-sep">:</span>
+              <span>{time.minutes}</span>
+              <span className="register-section__countdown-sep">:</span>
+              <span>{time.seconds}</span>
+            </div>
+          </div>
+
+          <div className="form-wrap">
           <form onSubmit={handleSubmit} noValidate>
             <h3 className="form-title">Зареєструватися на інтенсив</h3>
             <ul className="form-highlights" aria-label="Умови інтенсиву">
@@ -350,6 +407,7 @@ export default function RegisterForm() {
               {submitting ? "Надсилаємо…" : "Зареєструватися"}
             </button>
           </form>
+          </div>
         </div>
       </div>
     </section>
