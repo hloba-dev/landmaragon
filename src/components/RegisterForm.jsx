@@ -306,8 +306,14 @@ export default function RegisterForm() {
                   disabled={submitting}
                 />
                 <span>
-                  Приймаю <a href="#privacy">Політику конфіденційності</a> та{" "}
-                  <a href="#terms">Умови користування послугами</a>
+                  Приймаю{" "}
+                  <a href="/privacy.html" target="_blank" rel="noopener">
+                    Політику конфіденційності
+                  </a>{" "}
+                  та{" "}
+                  <a href="/terms.html" target="_blank" rel="noopener">
+                    Умови користування послугами
+                  </a>
                 </span>
               </label>
 

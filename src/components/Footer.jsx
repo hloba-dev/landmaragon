@@ -8,13 +8,19 @@ export default function Footer() {
 
         <ul className="footer__links">
           <li>
-            <a href="#terms">Умови користування</a>
+            <a href="/terms.html" target="_blank" rel="noopener">
+              Умови користування
+            </a>
           </li>
           <li>
-            <a href="#privacy">Політика конфіденційності</a>
+            <a href="/privacy.html" target="_blank" rel="noopener">
+              Політика конфіденційності
+            </a>
           </li>
           <li>
-            <a href="#disclaimer">Відмова від відповідальності</a>
+            <a href="/disclaimer.html" target="_blank" rel="noopener">
+              Відмова від відповідальності
+            </a>
           </li>
         </ul>
 
