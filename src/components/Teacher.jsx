@@ -2,9 +2,35 @@ import { noBreak } from "../utils/text.js";
 
 const REGALIA = [
   noBreak("Понад 2 роки практичного досвіду з AI та no-code автоматизаціями"),
-  noBreak("Засновник школи HlobaFlow — навчає студентів запускати AI-проєкти"),
+  noBreak("Засновник школи HlobaFlow — навчає підприємців і фахівців запускати AI-проєкти"),
   "Будує реальні автоматизації для українського й міжнародного бізнесу",
   "Пояснює складні речі простою мовою, з фокусом на результат, а не теорію",
+];
+
+const NICHES = [
+  "E-commerce та Shopify",
+  "Маркетингові агенції",
+  "EdTech / онлайн-школи",
+  "B2B-сервіси та SaaS",
+  "Контент-проєкти та медіа",
+];
+
+const CASES = [
+  {
+    metric: "−15 год/тиж",
+    title: "Обробка замовлень в e-commerce",
+    desc: "AI-асистент сортує замовлення, формує накладні та оновлює CRM. Власник звільнив 15+ годин на тиждень для зростання бізнесу.",
+  },
+  {
+    metric: "80% запитів",
+    title: "AI-агент підтримки в Telegram",
+    desc: "Бот для агенції відповідає на типові питання клієнтів цілодобово й передає менеджеру лише складні кейси.",
+  },
+  {
+    metric: "×3 швидше",
+    title: "Кваліфікація лідів для B2B",
+    desc: "Воронка з n8n + GPT автоматично кваліфікує заявки за 6 параметрами та одразу планує дзвінок із менеджером.",
+  },
 ];
 
 export default function Teacher() {
@@ -40,7 +66,40 @@ export default function Teacher() {
                 <li key={i}>{item}</li>
               ))}
             </ul>
+
+            <div className="teacher__niches">
+              <span className="teacher__niches-label">
+                Категорії клієнтів, з якими працював:
+              </span>
+              <ul className="teacher__niches-list">
+                {NICHES.map((n) => (
+                  <li className="teacher__niche" key={n}>
+                    {n}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+        </div>
+
+        <div className="teacher__cases">
+          <span className="section-eyebrow">З практики</span>
+          <h3 className="teacher__cases-title">
+            Реальні автоматизації, які приносять результат
+          </h3>
+          <div className="teacher__cases-grid">
+            {CASES.map((c) => (
+              <article className="teacher__case" key={c.title}>
+                <div className="teacher__case-metric">{c.metric}</div>
+                <h4 className="teacher__case-title">{c.title}</h4>
+                <p className="teacher__case-desc">{c.desc}</p>
+              </article>
+            ))}
+          </div>
+          <p className="teacher__cases-note">
+            * Сценарії з реальної практики автоматизацій. Конкретні цифри по
+            кожному проєкту різняться залежно від обсягу та складності.
+          </p>
         </div>
       </div>
     </section>
