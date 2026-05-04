@@ -21,10 +21,17 @@ export default function Bonus() {
             <li>готовий стартовий workflow для перевірки.</li>
           </ul>
 
-          <p className="bonus__sub" style={{ marginTop: 18 }}>
-            <b className="text-accent">Додатково:</b> серед активних учасників — розіграш
-            готового сервера з n8n <b>безкоштовно на 2 місяці</b> від HlobaFlow.
-          </p>
+          <div className="bonus__extra" role="complementary">
+            <span className="bonus__extra-tag">Додатковий приз</span>
+            <h3 className="bonus__extra-title">
+              Сервер з n8n{" "}
+              <span className="text-accent">безкоштовно на 2 місяці</span>
+            </h3>
+            <p className="bonus__extra-desc">
+              Серед <b>активних учасників</b> інтенсиву ми розігруємо готовий
+              сервер з повністю налаштованим n8n — від HlobaFlow.
+            </p>
+          </div>
 
           <a href="#register" className="btn btn--lg">
             Хочу отримати урок

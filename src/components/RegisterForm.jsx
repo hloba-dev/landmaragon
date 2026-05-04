@@ -184,6 +184,32 @@ export default function RegisterForm() {
             Реєструйся на інтенсив!
           </p>
 
+          <div className="register-section__perks" aria-label="Що отримаєш після реєстрації">
+            <span className="register-section__perks-label">
+              Що отримаєш після реєстрації:
+            </span>
+            <ul className="register-section__perks-list">
+              <li className="register-section__perk">
+                <span className="register-section__perk-icon" aria-hidden="true">★</span>
+                <span>
+                  3 дні живої практики з <b>AI-автоматизаціями</b>
+                </span>
+              </li>
+              <li className="register-section__perk">
+                <span className="register-section__perk-icon" aria-hidden="true">★</span>
+                <span>
+                  Безкоштовний урок: <b>встанови n8n на власний сервер</b>
+                </span>
+              </li>
+              <li className="register-section__perk register-section__perk--accent">
+                <span className="register-section__perk-icon" aria-hidden="true">🎁</span>
+                <span>
+                  Шанс виграти <b>сервер з n8n на 2 місяці</b> від HlobaFlow
+                </span>
+              </li>
+            </ul>
+          </div>
+
           <div className="register-section__visual" aria-hidden="true">
             <div className="register-section__visual-glow" />
             <img

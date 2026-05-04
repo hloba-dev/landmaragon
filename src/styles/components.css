@@ -544,6 +544,86 @@
   flex-shrink: 0;
 }
 
+.bonus__extra {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 32px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 0, 0.18) 0%,
+    rgba(255, 107, 0, 0.05) 100%
+  );
+  border: 1.5px solid rgba(255, 107, 0, 0.45);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 48px -20px rgba(255, 107, 0, 0.45);
+  text-align: center;
+  overflow: hidden;
+}
+
+.bonus__extra::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 51, 0.7) 0%,
+    rgba(255, 107, 0, 0.2) 50%,
+    rgba(255, 140, 51, 0.5) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.bonus__extra-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 12px;
+  background: var(--accent);
+  color: #000;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.bonus__extra-title {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3.4vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.bonus__extra-desc {
+  margin: 0;
+  font-size: clamp(14px, 1.6vw, 17px);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.bonus__extra-desc b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+@media (max-width: 540px) {
+  .bonus__extra {
+    padding: 18px 16px 20px;
+  }
+  .bonus__extra-title {
+    font-size: 22px;
+  }
+}
+
 /* ---------- Teacher ---------- */
 .teacher {
   display: grid;
@@ -1573,6 +1653,72 @@
   margin: 0;
 }
 
+.register-section__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.register-section__perks-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.register-section__perks-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.register-section__perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.register-section__perk b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.register-section__perk-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.register-section__perk--accent .register-section__perk-icon {
+  background: var(--accent);
+  color: #000;
+  font-size: 13px;
+}
+
+.register-section__perk--accent {
+  color: var(--text);
+}
+
 .register-section__visual {
   position: relative;
   width: 100%;
@@ -1677,5 +1823,20 @@
 
   .register-section__countdown-time {
     font-size: clamp(26px, 8vw, 36px);
+  }
+
+  .register-section__perks {
+    padding: 14px 14px;
+  }
+
+  .register-section__perk {
+    font-size: 13.5px;
+    gap: 8px;
+  }
+
+  .register-section__perk-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
   }
 }

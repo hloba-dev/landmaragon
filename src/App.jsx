@@ -25,7 +25,7 @@ const START_DATE = (() => {
 
 export default function App() {
   useSmoothAnchorScroll();
-  useAutoScrollToForm("register-timer", 2200);
+  useAutoScrollToForm("register-timer", 400);
 
   return (
     <>
