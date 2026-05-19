@@ -2,6 +2,7 @@ import TopBar from "./components/TopBar.jsx";
 import Hero from "./components/Hero.jsx";
 import Countdown from "./components/Countdown.jsx";
 import Program from "./components/Program.jsx";
+import Examples from "./components/Examples.jsx";
 import ForWho from "./components/ForWho.jsx";
 import Bonus from "./components/Bonus.jsx";
 import Teacher from "./components/Teacher.jsx";
@@ -34,6 +35,7 @@ export default function App() {
         <Hero />
         <Countdown target={START_DATE} />
         <Program />
+        <Examples />
         <ForWho />
         <Bonus />
         <Teacher />
