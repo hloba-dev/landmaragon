@@ -62,12 +62,25 @@ export function smoothScrollTo(targetY, opts = {}) {
 
 /**
  * Скрол до елемента за id з урахуванням висоти sticky topbar.
+ *
+ * Якщо всередині секції є дочірній елемент з [data-scroll-focus] —
+ * скрол іде саме до нього (наприклад, до форми, а не до заголовка секції).
+ * Це гарантує, що ключовий контент (перші поля форми) відразу видно на мобільному.
  */
 export function smoothScrollToId(id, opts) {
-  const target = document.getElementById(id);
-  if (!target) return () => {};
+  const section = document.getElementById(id);
+  if (!section) return () => {};
+
+  const focus = section.querySelector("[data-scroll-focus]");
+  const target = focus || section;
+
   const topbar = document.querySelector(".topbar");
-  const offset = topbar ? topbar.getBoundingClientRect().height + 8 : 0;
+  const topbarH = topbar ? topbar.getBoundingClientRect().height : 0;
+  // Більший зазор під фокус-таргетом — щоб заголовок форми не «прилипав» до topbar
+  // і перші поля гарантовано були в полі зору на телефоні.
+  const gap = focus ? 16 : 8;
+  const offset = topbarH + gap;
+
   const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
   return smoothScrollTo(targetY, opts);
 }

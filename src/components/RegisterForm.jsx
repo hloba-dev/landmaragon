@@ -244,7 +244,7 @@ export default function RegisterForm() {
             </div>
           </div>
 
-          <div className="form-wrap">
+          <div className="form-wrap" data-scroll-focus>
             <form onSubmit={handleSubmit} noValidate>
               <h3 className="form-title">Зареєструватися на інтенсив</h3>
               <ul className="form-highlights" aria-label="Умови інтенсиву">
